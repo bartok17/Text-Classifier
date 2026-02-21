@@ -8,6 +8,11 @@ Local-first text classification service.
 
 OpenAPI docs once running: `http://localhost:8000/docs`
 
+## brief description of what is this project
+
+This project is a small web app/API for **classifying text into labels**. You can add text entries, manage labels, and run a classification endpoint that assigns the most appropriate label(s) to new text. It’s useful for things like routing messages, tagging support tickets, organizing notes, or any workflow where you want consistent categories applied to free-form text.
+I havent implemented frontend app for this project, but having api makes the integration easy.
+
 ## What’s in this repo
 
 - **FastAPI** app in `app/main.py`
@@ -150,7 +155,7 @@ If Ollama is unavailable, these endpoints return:
 - **503** when Ollama is unreachable
 - **502** when Ollama returns an unexpected payload
 
-Minimal setup on macOS:
+Minimal setup:
 
 1) Install and start Ollama: https://ollama.com
 2) Pull an embedding model (must match your `.env`):
