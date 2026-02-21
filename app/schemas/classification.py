@@ -69,13 +69,6 @@ class DeleteEntryResponse(BaseModel):
     deleted: bool
     entry_id: int
 
-class ReclassifyResponse(BaseModel):
-    scanned_count: int
-    reclassified_count: int
-    failed_count: int
-    reclassified: list[ReclassifiedItemResponse] = Field(default_factory=list)
-    failed: list[ReclassifiedItemResponse] = Field(default_factory=list) 
-
 class ReclassifiedItemRequest(BaseModel):
     label: str | None = Field(default=None, max_length=120)
     label_id: int | None = Field(default=None, ge=1)
@@ -97,6 +90,14 @@ class ReclassifiedItemResponse(BaseModel):
     assigned_label: str
     similarity_score: float | None = None
     reason: str
+
+
+class ReclassifyResponse(BaseModel):
+    scanned_count: int
+    reclassified_count: int
+    failed_count: int
+    reclassified: list[ReclassifiedItemResponse] = Field(default_factory=list)
+    failed: list[ReclassifiedItemResponse] = Field(default_factory=list) 
 
 
 

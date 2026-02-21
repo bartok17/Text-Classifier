@@ -1,5 +1,6 @@
 import re
 from app.services.embedding_service import cosine_similarity
+from app.models.label import Label
 
 
 def normalize_label_name(name: str) -> str:
